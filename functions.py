@@ -6,3 +6,5 @@ def define_train_color(color):
     else:
         train_color = ['white']
     return train_color
+
+    

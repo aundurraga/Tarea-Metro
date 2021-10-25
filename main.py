@@ -1,7 +1,10 @@
 from classes import Station, Metro
 
+casos_de_prueba = False #Poner como True si se quieren imprimir los casos de prueba
+
 original_network = Metro()
 colors = ['red', 'green']
+#file = easy.txt
 
 while True:
     file = input("Enter the name of the file that contains the Metro network: ")
@@ -11,7 +14,7 @@ while True:
     except Exception as e:
         print('File not found. Check that your file exists please :).')
 
-original_network.load_network(file)
+# original_network.load_network(file)
 # original_network.print_graph()
 stations = original_network.print_stations()
 
@@ -71,7 +74,7 @@ original_network.update_network(color)
 shortest_path = original_network.find_shortest_path(stations[start], stations[goal], color, True)
 
 
-# file = "easy.txt"
+
 # start = 'A'
 # goal = 'F'
 # shortest_path = original_network.find_shortest_path(start, goal, color, True)
@@ -90,43 +93,44 @@ def test_cases(number, train_color, expected_output, start, goal):
 
 
 if __name__ == '__main__':
-    print("\n------------ CASOS DE PRUEBA ----------------\n")
-    # CASO 1 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Blanca
-    print("CASO 1 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Blanca")
-    expected = ['A', 'B', 'C', 'H', 'F']
-    test_cases(1, "red", expected, 'A', 'F')
+    if casos_de_prueba == True:
+        print("\n------------ CASOS DE PRUEBA ----------------\n")
+        # CASO 1 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Blanca
+        print("CASO 1 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Blanca")
+        expected = ['A', 'B', 'C', 'H', 'F']
+        test_cases(1, "red", expected, 'A', 'F')
 
-    # CASO 2 Tren: Verde Estacion Inicial: Blanca Estacion Final: Blanca
-    print("CASO 2 Tren: Verde Estacion Inicial: Blanca Estacion Final: Blanca")
-    expected = ['A', 'B', 'C', 'D', 'E', 'F']
-    test_cases(2, "green", expected, 'A', 'F')
+        # CASO 2 Tren: Verde Estacion Inicial: Blanca Estacion Final: Blanca
+        print("CASO 2 Tren: Verde Estacion Inicial: Blanca Estacion Final: Blanca")
+        expected = ['A', 'B', 'C', 'D', 'E', 'F']
+        test_cases(2, "green", expected, 'A', 'F')
 
-    # CASO 3 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Blanca
-    print("CASO 3 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Blanca")
-    expected = ['A', 'B', 'C', 'D', 'E', 'F']
-    test_cases(3, "white", expected, 'A', 'F')
+        # CASO 3 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Blanca
+        print("CASO 3 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Blanca")
+        expected = ['A', 'B', 'C', 'D', 'E', 'F']
+        test_cases(3, "white", expected, 'A', 'F')
 
-    # CASO 4 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Roja
-    print("CASO 4 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Roja")
-    expected = ['A', 'B', 'C', 'G', 'H']
-    test_cases(4, "white", expected, 'A', 'H')
+        # CASO 4 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Roja
+        print("CASO 4 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Roja")
+        expected = ['A', 'B', 'C', 'G', 'H']
+        test_cases(4, "white", expected, 'A', 'H')
 
-    # CASO 5 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Verde
-    print("CASO 5 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Verde")
-    expected = ['A', 'B', 'C', 'G']
-    test_cases(5, "white", expected, 'A', 'G')
+        # CASO 5 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Verde
+        print("CASO 5 Tren: Blanco Estacion Inicial: Blanca Estacion Final: Verde")
+        expected = ['A', 'B', 'C', 'G']
+        test_cases(5, "white", expected, 'A', 'G')
 
-    # CASO 6 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde
-    print("CASO 6 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde")
-    expected = None
-    test_cases(6, "red", expected, 'A', 'G')
+        # CASO 6 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde
+        print("CASO 6 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde")
+        expected = None
+        test_cases(6, "red", expected, 'A', 'G')
 
-    # CASO 7 Tren: Verde Estacion Inicial: Roja Estacion Final: Verde
-    print("CASO 7 Tren: Verde Estacion Inicial: Roja Estacion Final: Verde")
-    expected = None
-    test_cases(7, "green", expected, 'H', 'G')
+        # CASO 7 Tren: Verde Estacion Inicial: Roja Estacion Final: Verde
+        print("CASO 7 Tren: Verde Estacion Inicial: Roja Estacion Final: Verde")
+        expected = None
+        test_cases(7, "green", expected, 'H', 'G')
 
-    # CASO 8 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde
-    print("CASO 8 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde")
-    expected = None
-    test_cases(8, "red", expected, 'A', 'G')
+        # CASO 8 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde
+        print("CASO 8 Tren: Rojo Estacion Inicial: Blanca Estacion Final: Verde")
+        expected = None
+        test_cases(8, "red", expected, 'A', 'G')
