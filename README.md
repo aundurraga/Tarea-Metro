@@ -17,9 +17,11 @@ Para el caso **_easy_** se utilizó el grafo del enunciado:
 ![grafico](graph_images/graph.png)
 
 Para el caso **_medium_** se utilizó el siguiente grafo:
+
 ![grafico](graph_images/graph_medium.png)
 
 Para el caso **_hard_** se utilizó el siguiente grafo:
+
 ![grafico](graph_images/graph_hard.png)
 
 ### Supuestos 
