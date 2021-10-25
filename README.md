@@ -1,5 +1,7 @@
 # Tarea Buda.com - Metro
 ### Ana Undurraga D.
+En el caso de que exista, obtiene la ruta más corta entre dos estaciones de una red de metro.
+
 ## Consideraciones Generales 
 
 Primero, se le pide al usuario que ingrese un test. Este debe estar guardado en la carpeta tests y se debe ingrerar su nombre incluyendo el .txt .
