@@ -21,7 +21,7 @@ Para el caso **_medium_** se utilizó el siguiente grafo:
 
 Para el caso **_hard_** se utilizó el siguiente grafo:
 ![grafico](graph_images/graph_hard.png)
-En la línea 18 del archivo ```main.py``` se llama a _original_network.print_graph()_, esto es una función que dibuja la red, pero hace que el programa corra más lento, por lo que en caso de tener la red se puede comentar.
+
 ### Supuestos 
 - Por temas de simplicidad se definieron tres colores para las estaciones y los trenes; **red**,  **green**  y **white** en el caso de que la estación no tenga color.
 - Se asumió que los trenes exprés funcionan en cierto horario al igual que en el Metro de Santiago, por lo que se consideró que si el tren es blanco, ya no se está en horario exprés y los trenes blancos pueden detenerse  en todas las estaciones.
